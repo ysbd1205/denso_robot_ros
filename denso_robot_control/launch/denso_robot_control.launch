@@ -40,4 +40,8 @@
         type="robot_state_publisher" respawn="false" output="screen">
     <remap from="/joint_states" to="/$(arg robot_name)/joint_states" />
   </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <rosparam param="source_list">[/vs060/joint_states]</rosparam>
+  </node>
 </launch>
